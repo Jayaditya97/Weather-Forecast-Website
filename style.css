@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("images/sunny-day.jpg") no-repeat center center/cover;
+  color: #222;
+  transition: background 0.5s, color 0.5s;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+  margin: 0;
+}
+
+.search-bar {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 200px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+/* City Cards */
+.city-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.city-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.forecast {
+  display: none;
+  margin-top: 1rem;
+}
+
+/* Favorites Section */
+#favorites {
+  padding: 1rem;
+  background: rgba(240, 240, 240, 0.9);
+}
+
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.favorite-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode header,
+body.dark-mode .city-card,
+body.dark-mode .favorite-card,
+body.dark-mode #favorites {
+  background: rgba(30, 30, 30, 0.9);
+  color: #eee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .city-card, .favorite-card {
+    width: 90%;
+  }
+}
