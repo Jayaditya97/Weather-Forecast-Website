@@ -95,9 +95,9 @@ darkModeBtn.addEventListener("click", () => {
 
   // Change button icon & text
   if (document.body.classList.contains("dark")) {
-    darkModeBtn.textContent = "☀️ Light mode";
+    darkModeBtn.textContent = "☀️ ";
   } else {
-    darkModeBtn.textContent = "🌙 Dark mode";
+    darkModeBtn.textContent = "🌙 ";
   }
 });
 
