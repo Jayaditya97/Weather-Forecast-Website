@@ -1,120 +1,119 @@
-// Predefined city data
-const cities = [
-  {
-    name: "New York",
-    tempC: 25,
-    condition: "Sunny",
+// Predefined static weather data
+const weatherData = {
+  "Rajpura": {
+    tempC: 26, tempF: 78, condition: "Mostly Cloudy",
     forecast: [
-      { day: "Mon", temp: 26, condition: "Sunny" },
-      { day: "Tue", temp: 27, condition: "Cloudy" },
-      { day: "Wed", temp: 24, condition: "Rainy" },
-      { day: "Thu", temp: 22, condition: "Windy" },
-      { day: "Fri", temp: 25, condition: "Sunny" }
+      { day: "Mon", tempC: 27, condition: "Sunny" },
+      { day: "Tue", tempC: 25, condition: "Cloudy" },
+      { day: "Wed", tempC: 24, condition: "Rainy" },
+      { day: "Thu", tempC: 28, condition: "Sunny" },
+      { day: "Fri", tempC: 26, condition: "Thunderstorm" }
     ]
   },
-  {
-    name: "London",
-    tempC: 18,
-    condition: "Cloudy",
+  "Delhi": {
+    tempC: 32, tempF: 90, condition: "Sunny",
     forecast: [
-      { day: "Mon", temp: 17, condition: "Cloudy" },
-      { day: "Tue", temp: 19, condition: "Rainy" },
-      { day: "Wed", temp: 20, condition: "Sunny" },
-      { day: "Thu", temp: 18, condition: "Windy" },
-      { day: "Fri", temp: 21, condition: "Cloudy" }
+      { day: "Mon", tempC: 33, condition: "Sunny" },
+      { day: "Tue", tempC: 31, condition: "Hot" },
+      { day: "Wed", tempC: 30, condition: "Cloudy" },
+      { day: "Thu", tempC: 34, condition: "Sunny" },
+      { day: "Fri", tempC: 32, condition: "Hot" }
     ]
   },
-  {
-    name: "Tokyo",
-    tempC: 30,
-    condition: "Rainy",
+  "Mumbai": {
+    tempC: 29, tempF: 85, condition: "Rainy",
     forecast: [
-      { day: "Mon", temp: 29, condition: "Rainy" },
-      { day: "Tue", temp: 28, condition: "Cloudy" },
-      { day: "Wed", temp: 30, condition: "Sunny" },
-      { day: "Thu", temp: 31, condition: "Windy" },
-      { day: "Fri", temp: 32, condition: "Sunny" }
+      { day: "Mon", tempC: 28, condition: "Rainy" },
+      { day: "Tue", tempC: 29, condition: "Thunderstorm" },
+      { day: "Wed", tempC: 30, condition: "Rainy" },
+      { day: "Thu", tempC: 31, condition: "Cloudy" },
+      { day: "Fri", tempC: 29, condition: "Rainy" }
     ]
   },
-  {
-    name: "Sydney",
-    tempC: 22,
-    condition: "Windy",
+  "Chennai": {
+    tempC: 34, tempF: 93, condition: "Hot",
     forecast: [
-      { day: "Mon", temp: 21, condition: "Windy" },
-      { day: "Tue", temp: 23, condition: "Sunny" },
-      { day: "Wed", temp: 22, condition: "Cloudy" },
-      { day: "Thu", temp: 20, condition: "Rainy" },
-      { day: "Fri", temp: 24, condition: "Sunny" }
+      { day: "Mon", tempC: 35, condition: "Sunny" },
+      { day: "Tue", tempC: 34, condition: "Hot" },
+      { day: "Wed", tempC: 36, condition: "Sunny" },
+      { day: "Thu", tempC: 33, condition: "Humid" },
+      { day: "Fri", tempC: 34, condition: "Sunny" }
     ]
   }
-];
+};
 
-// Render cities
-const cityContainer = document.getElementById("cities");
-cities.forEach(city => {
-  const cityCard = document.createElement("div");
-  cityCard.className = "city-card";
-  
-  const tempF = (city.tempC * 9/5 + 32).toFixed(1);
+let currentCity = "Rajpura";
+let isCelsius = true;
 
-  cityCard.innerHTML = `
-    <h3>${city.name}</h3>
-    <p>${city.tempC}°C / ${tempF}°F</p>
-    <p>${city.condition}</p>
-    <button class="forecast-btn">Show 5-day Forecast</button>
-    <div class="forecast">
-      ${city.forecast.map(day => `
-        <p>${day.day}: ${day.temp}°C - ${day.condition}</p>
-      `).join("")}
-    </div>
-  `;
+// Select elements
+const cityName = document.getElementById("city-name");
+const temperature = document.getElementById("temperature");
+const condition = document.getElementById("condition");
+const forecastContainer = document.getElementById("forecast");
+const toggleUnitBtn = document.getElementById("toggle-unit");
+const cityButtons = document.querySelectorAll(".city-btn");
+const darkModeBtn = document.getElementById("dark-mode");
 
-  cityContainer.appendChild(cityCard);
+// Load city weather
+function loadWeather(city) {
+  currentCity = city;
+  const data = weatherData[city];
+  cityName.textContent = city;
+  condition.textContent = data.condition;
+  temperature.textContent = isCelsius ? data.tempC + "°C" : data.tempF + "°F";
 
-  // Forecast toggle
-  const btn = cityCard.querySelector(".forecast-btn");
-  const forecastDiv = cityCard.querySelector(".forecast");
+  // Change background
+  document.body.style.background = getBackground(data.condition);
+
+  // Forecast
+  forecastContainer.innerHTML = "";
+  data.forecast.forEach(day => {
+    const div = document.createElement("div");
+    div.classList.add("forecast-day");
+    div.innerHTML = `<p>${day.day}</p><p>${day.tempC}°C</p><p>${day.condition}</p>`;
+    forecastContainer.appendChild(div);
+  });
+}
+
+// Toggle Celsius/Fahrenheit
+toggleUnitBtn.addEventListener("click", () => {
+  isCelsius = !isCelsius;
+  toggleUnitBtn.textContent = isCelsius ? "Switch to °F" : "Switch to °C";
+  loadWeather(currentCity);
+});
+
+// Change city
+cityButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    forecastDiv.style.display = forecastDiv.style.display === "block" ? "none" : "block";
+    loadWeather(btn.dataset.city);
   });
 });
 
-// Favorites (first 3 cities)
-const favoritesContainer = document.querySelector(".favorites-container");
-cities.slice(0, 3).forEach(city => {
-  const favCard = document.createElement("div");
-  favCard.className = "favorite-card";
-  
-  const tempF = (city.tempC * 9/5 + 32).toFixed(1);
-
-  favCard.innerHTML = `
-    <h4>${city.name}</h4>
-    <p>${city.tempC}°C / ${tempF}°F</p>
-    <p>${city.condition}</p>
-  `;
-
-  favoritesContainer.appendChild(favCard);
-});
-
-// Dark Mode Toggle
-const darkModeBtn = document.getElementById("darkModeToggle");
+// Dark mode
 darkModeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("dark");
+
+  // Change button icon & text
+  if (document.body.classList.contains("dark")) {
+    darkModeBtn.textContent = "☀️ Light mode";
+  } else {
+    darkModeBtn.textContent = "🌙 Dark mode";
+  }
 });
 
-// Background Change (Demo: based on first city's condition & time)
-function updateBackground(condition) {
-  const hour = new Date().getHours();
-  let bg = "images/sunny-day.jpg";
 
-  if (condition === "Sunny" && hour >= 18) bg = "images/sunny-night.jpg";
-  else if (condition === "Rainy") bg = "images/rainy.jpg";
-  else if (condition === "Cloudy") bg = "images/cloudy.jpg";
-  else if (condition === "Windy") bg = "images/windy.jpg";
-
-  document.body.style.background = `url('${bg}') no-repeat center center/cover`;
+// Background based on weather
+function getBackground(condition) {
+  if (condition.includes("Sunny") || condition.includes("Hot")) {
+    return "linear-gradient(to top, #fddb92, #d1fdff)";
+  } else if (condition.includes("Cloudy")) {
+    return "linear-gradient(to top, #757f9a, #d7dde8)";
+  } else if (condition.includes("Rainy") || condition.includes("Thunderstorm")) {
+    return "linear-gradient(to top, #667db6, #0082c8, #0082c8, #667db6)";
+  } else {
+    return "linear-gradient(to top, #2980b9, #6dd5fa, #ffffff)";
+  }
 }
 
-// Set background based on New York for demo
-updateBackground(cities[0].condition);
+// Initial load
+loadWeather(currentCity);

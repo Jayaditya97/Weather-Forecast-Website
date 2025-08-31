@@ -3,24 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App Demo</title>
+  <title>Weather App (Demo)</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Weather App Demo</h1>
-    <input type="text" placeholder="Search city..." class="search-bar" disabled>
-    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    <h1>🌤️ Weather Forecast</h1>
+    <button id="dark-mode">🌙 Dark mode</button>
   </header>
 
-  <main>
-    <section id="cities" class="city-container"></section>
-  </main>
+  <!-- Search -->
+  <section class="search-bar">
+    <input type="text" placeholder="🔍 Search city (demo only)">
+    <button>Search</button>
+  </section>
 
-  <section id="favorites">
-    <h2>⭐ Favorite Cities</h2>
-    <div class="favorites-container">
-      <!-- Favorite cities will be displayed here -->
+  <!-- City Switch -->
+  <section class="city-buttons">
+    <button class="city-btn" data-city="Rajpura">Rajpura</button>
+    <button class="city-btn" data-city="Delhi">Delhi</button>
+    <button class="city-btn" data-city="Mumbai">Mumbai</button>
+    <button class="city-btn" data-city="Chennai">Chennai</button>
+  </section>
+
+  <!-- Current Weather -->
+  <section class="weather-display">
+    <h2 id="city-name">Rajpura</h2>
+    <p id="temperature">--°C</p>
+    <p id="condition">--</p>
+    <button id="toggle-unit">Switch to °F</button>
+  </section>
+
+  <!-- 5 Day Forecast -->
+  <section class="forecast-section">
+    <h3>5-Day Forecast</h3>
+    <div id="forecast" class="forecast"></div>
+  </section>
+
+  <!-- Favorites -->
+  <section class="favorites">
+    <h3>⭐ Favorites</h3>
+    <div class="fav-list">
+      <div class="fav-card">New York</div>
+      <div class="fav-card">London</div>
+      <div class="fav-card">Tokyo</div>
     </div>
   </section>
 
