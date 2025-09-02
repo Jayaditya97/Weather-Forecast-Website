@@ -2,54 +2,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Forecast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🌤️ Weather Forecast</h1>
-    <button id="dark-mode">🌙 Dark Mode</button>
-  </header>
+<!-- Header / Location Section -->
+<div class="header large" id="header">
+  <p class="location">📍 Rajpura</p>
+  <h1 class="temp">25°</h1>
+  <p class="condition">Rain Shower</p>
+</div>
 
-  <!-- Search -->
-  <section class="search-bar">
-    <input type="text" placeholder="🔍 Search city (demo only)">
-    <button>Search</button>
-  </section>
+  <!-- Weather Illustration -->
+  <div class="illustration">
+    <!-- Replace with your own MP4 -->
+    <video autoplay muted loop>
+      <source src="rainy.mp4" type="video/mp4">
+    </video>
+  </div>
 
-  <!-- City Switch -->
-  <section class="city-buttons">
-    <button class="city-btn" data-city="Rajpura">Rajpura</button>
-    <button class="city-btn" data-city="Delhi">Delhi</button>
-    <button class="city-btn" data-city="Mumbai">Mumbai</button>
-    <button class="city-btn" data-city="Chennai">Chennai</button>
-  </section>
-
-  <!-- Current Weather -->
-  <section class="weather-display">
-    <h2 id="city-name">Rajpura</h2>
-    <p id="temperature">--°C</p>
-    <p id="condition">--</p>
-    <button id="toggle-unit">Switch to °F</button>
-  </section>
-
-  <!-- 5 Day Forecast -->
-  <section class="forecast-section">
-    <h3>5-Day Forecast</h3>
-    <div id="forecast" class="forecast"></div>
-  </section>
-
-  <!-- Favorites -->
-  <section class="favorites">
-    <h3>⭐ Favorites</h3>
-    <div class="fav-list">
-      <div class="fav-card">New York</div>
-      <div class="fav-card">London</div>
-      <div class="fav-card">Tokyo</div>
+  <!-- Forecast Card -->
+  <div class="card">
+    <h2>Thunderstorms</h2>
+    <div class="forecast-row">
+      <div class="forecast-item">
+        <p>20:30</p>
+        <img src="cloud.png" alt="Cloud">
+        <p>25°</p>
+      </div>
+      <div class="forecast-item">
+        <p>21:30</p>
+        <img src="cloud.png" alt="Cloud">
+        <p>25°</p>
+      </div>
+      <div class="forecast-item">
+        <p>22:30</p>
+        <img src="cloud.png" alt="Cloud">
+        <p>25°</p>
+      </div>
+      <div class="forecast-item">
+        <p>23:30</p>
+        <img src="storm.png" alt="Storm">
+        <p>25°</p>
+      </div>
+      <div class="forecast-item">
+        <p>00:30</p>
+        <img src="storm.png" alt="Storm">
+        <p>25°</p>
+      </div>
+      <div class="forecast-item">
+        <p>01:30</p>
+        <img src="storm.png" alt="Storm">
+        <p>25°</p>
+      </div>
     </div>
-  </section>
+    <div class="timeline"></div>
 
-  <script src="script.js"></script>
+    <!-- Precipitation Chart -->
+    <div class="chart">
+      <div class="chart-grid">
+        <div class="bar" style="height:0%">0</div>
+        <div class="bar" style="height:0%">0</div>
+        <div class="bar" style="height:0%">0</div>
+        <div class="bar" style="height:30%">0.51</div>
+        <div class="bar" style="height:70%">1.32</div>
+        <div class="bar" style="height:100%">1.86</div>
+      </div>
+      <div class="time-labels">
+        <span>20:30</span>
+        <span>21:30</span>
+        <span>22:30</span>
+        <span>23:30</span>
+        <span>00:30</span>
+        <span>01:30</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weekly Forecast Card -->
+<div class="weekly-card">
+  <div class="forecast-row header">
+    <span>Yesterday</span>
+    <span class="temp">26° 23°</span>
+  </div>
+
+  <div class="forecast-row">
+    <span>Today</span>
+    <span class="rain">💧 91%</span>
+    <span class="icons">☁️ ⛈️</span>
+    <span class="temp">26° 23°</span>
+  </div>
+
+  <div class="forecast-row">
+    <span>Wed</span>
+    <span class="rain">💧 69%</span>
+    <span class="icons">⛈️ 🌙</span>
+    <span class="temp">28° 24°</span>
+  </div>
+
+  <div class="forecast-row">
+    <span>Thu</span>
+    <span class="rain">💧 38%</span>
+    <span class="icons">⛈️ 🌙</span>
+    <span class="temp">30° 24°</span>
+  </div>
+
+  <div class="forecast-row">
+    <span>Fri</span>
+    <span class="rain">💧 48%</span>
+    <span class="icons">⛈️</span>
+    <span class="temp">31° 26°</span>
+  </div>
+
+  <div class="forecast-row">
+    <span>Sat</span>
+    <span class="rain">💧 51%</span>
+    <span class="icons">⛈️</span>
+    <span class="temp">30° 26°</span>
+  </div>
+
+  <div class="forecast-row">
+    <span>Sun</span>
+    <span class="rain">💧 62%</span>
+    <span class="icons">⛈️</span>
+    <span class="temp">31° 26°</span>
+  </div>
+
+  <div class="forecast-row">
+    <span>Mon</span>
+    <span class="rain">💧 70%</span>
+    <span class="icons">⛈️</span>
+    <span class="temp">31° 25°</span>
+  </div>
+</div>
+
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <div class="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="search">🔍</div>
+  </div>
+
+  <script>
+  const header = document.getElementById("header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.remove("large");
+      header.classList.add("small");
+    } else {
+      header.classList.remove("small");
+      header.classList.add("large");
+    }
+  });
+</script>
+
 </body>
 </html>
