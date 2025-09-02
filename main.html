@@ -2,64 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Weather Forecast</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App Demo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Header / Location Section -->
-<div class="header large" id="header">
-  <p class="location">📍 Rajpura</p>
-  <h1 class="temp">25°</h1>
-  <p class="condition">Rain Shower</p>
-</div>
 
-  <!-- Weather Illustration -->
-  <div class="illustration">
-    <!-- Replace with your own MP4 -->
-    <video autoplay muted loop>
-      <source src="rainy.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- Forecast Card -->
-  <div class="card">
-    <h2>Thunderstorms</h2>
-    <div class="forecast-row">
-      <div class="forecast-item">
-        <p>20:30</p>
-        <img src="cloud.png" alt="Cloud">
-        <p>25°</p>
-      </div>
-      <div class="forecast-item">
-        <p>21:30</p>
-        <img src="cloud.png" alt="Cloud">
-        <p>25°</p>
-      </div>
-      <div class="forecast-item">
-        <p>22:30</p>
-        <img src="cloud.png" alt="Cloud">
-        <p>25°</p>
-      </div>
-      <div class="forecast-item">
-        <p>23:30</p>
-        <img src="storm.png" alt="Storm">
-        <p>25°</p>
-      </div>
-      <div class="forecast-item">
-        <p>00:30</p>
-        <img src="storm.png" alt="Storm">
-        <p>25°</p>
-      </div>
-      <div class="forecast-item">
-        <p>01:30</p>
-        <img src="storm.png" alt="Storm">
-        <p>25°</p>
-      </div>
+  <!-- Collapsing Header -->
+  <header id="main-header">
+    <!-- Large header (default) -->
+    <div class="header-large">
+      <h1 id="location">Rajpura</h1>
+      <div class="temp-large">25°</div>
     </div>
-    <div class="timeline"></div>
 
-    <!-- Precipitation Chart -->
+    <!-- Small header (shows after scroll) -->
+    <div class="header-small">
+      <span id="location-small">Rajpura</span>
+      <span id="temp-small">25°</span>
+      <span id="range-small">↑26° / ↓23°</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Video illustration -->
+    <section class="video-section">
+      <video autoplay muted loop>
+        <source src="weather.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <!-- Forecast slider -->
+    <section class="forecast-row">
+      <div class="forecast-card">Now<br>25°</div>
+      <div class="forecast-card">1 PM<br>26°</div>
+      <div class="forecast-card">2 PM<br>27°</div>
+      <div class="forecast-card">3 PM<br>28°</div>
+      <div class="forecast-card">4 PM<br>29°</div>
+    </section>
+
+    <!-- Precipitation chart placeholder -->
     <div class="chart">
       <div class="chart-grid">
         <div class="bar" style="height:0%">0</div>
@@ -80,88 +63,43 @@
     </div>
   </div>
 
-  <!-- Weekly Forecast Card -->
-<div class="weekly-card">
-  <div class="forecast-row header">
-    <span>Yesterday</span>
-    <span class="temp">26° 23°</span>
-  </div>
+    <!-- Weekly forecast -->
+    <section class="weekly">
+      <h2>This Week</h2>
+      <div class="weekly-row">
+        <span>Mon</span><span>☀️</span><span>10%</span><span>29° / 23°</span>
+      </div>
+      <div class="weekly-row">
+        <span>Tue</span><span>🌧️</span><span>60%</span><span>27° / 22°</span>
+      </div>
+      <div class="weekly-row">
+        <span>Wed</span><span>⛅</span><span>20%</span><span>28° / 21°</span>
+      </div>
+    </section>
+  </main>
 
-  <div class="forecast-row">
-    <span>Today</span>
-    <span class="rain">💧 91%</span>
-    <span class="icons">☁️ ⛈️</span>
-    <span class="temp">26° 23°</span>
-  </div>
-
-  <div class="forecast-row">
-    <span>Wed</span>
-    <span class="rain">💧 69%</span>
-    <span class="icons">⛈️ 🌙</span>
-    <span class="temp">28° 24°</span>
-  </div>
-
-  <div class="forecast-row">
-    <span>Thu</span>
-    <span class="rain">💧 38%</span>
-    <span class="icons">⛈️ 🌙</span>
-    <span class="temp">30° 24°</span>
-  </div>
-
-  <div class="forecast-row">
-    <span>Fri</span>
-    <span class="rain">💧 48%</span>
-    <span class="icons">⛈️</span>
-    <span class="temp">31° 26°</span>
-  </div>
-
-  <div class="forecast-row">
-    <span>Sat</span>
-    <span class="rain">💧 51%</span>
-    <span class="icons">⛈️</span>
-    <span class="temp">30° 26°</span>
-  </div>
-
-  <div class="forecast-row">
-    <span>Sun</span>
-    <span class="rain">💧 62%</span>
-    <span class="icons">⛈️</span>
-    <span class="temp">31° 26°</span>
-  </div>
-
-  <div class="forecast-row">
-    <span>Mon</span>
-    <span class="rain">💧 70%</span>
-    <span class="icons">⛈️</span>
-    <span class="temp">31° 25°</span>
-  </div>
-</div>
-
-
-  <!-- Bottom Navigation -->
-  <div class="bottom-nav">
-    <div class="dots">
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-    <div class="search">🔍</div>
-  </div>
+  <!-- Bottom nav -->
+  <nav class="bottom-nav">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <button class="search-btn">🔍</button>
+  </nav>
 
   <script>
-  const header = document.getElementById("header");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.remove("large");
-      header.classList.add("small");
-    } else {
-      header.classList.remove("small");
-      header.classList.add("large");
-    }
-  });
-</script>
+    const largeHeader = document.querySelector('.header-large');
+const smallHeader = document.querySelector('.header-small');
 
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 120) {
+    largeHeader.classList.add('hidden');
+    smallHeader.classList.add('active');
+  } else {
+    largeHeader.classList.remove('hidden');
+    smallHeader.classList.remove('active');
+  }
+});
+
+  </script>
 </body>
 </html>
