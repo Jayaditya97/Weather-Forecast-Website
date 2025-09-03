@@ -2,104 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App Demo</title>
+  <title>Weather App - Light Mode</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="images/cloudy.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
-  <!-- Collapsing Header -->
-  <header id="main-header">
-    <!-- Large header (default) -->
-    <div class="header-large">
-      <h1 id="location">Rajpura</h1>
-      <div class="temp-large">25°</div>
-    </div>
-
-    <!-- Small header (shows after scroll) -->
-    <div class="header-small">
-      <span id="location-small">Rajpura</span>
-      <span id="temp-small">25°</span>
-      <span id="range-small">↑26° / ↓23°</span>
-    </div>
+  <!-- Header -->
+  <header class="top-bar">
+    <h1>Weather App</h1>
+    <nav>
+      <a href="favorites.html">Favorites</a>
+    </nav>
   </header>
 
   <!-- Main Content -->
-  <main>
-    <!-- Video illustration -->
-    <section class="video-section">
-      <video autoplay muted loop>
-        <source src="weather.mp4" type="video/mp4">
-      </video>
+  <main class="content">
+    <!-- Current Weather -->
+    <section class="panel current-weather">
+      <h2>Current Weather - Chandigarh</h2>
+      <div class="weather-main">
+        <span class="icon">🌤</span>
+        <span class="temp">28°C</span>
+        <span class="condition">Cloudy</span>
+      </div>
+      <p class="details">Feels like 30°C | Humidity 60% | Wind 12 km/h</p>
     </section>
 
-    <!-- Forecast slider -->
-    <section class="forecast-row">
-      <div class="forecast-card">Now<br>25°</div>
-      <div class="forecast-card">1 PM<br>26°</div>
-      <div class="forecast-card">2 PM<br>27°</div>
-      <div class="forecast-card">3 PM<br>28°</div>
-      <div class="forecast-card">4 PM<br>29°</div>
+    <!-- Hourly Forecast -->
+    <section class="panel">
+      <h2>Hourly Forecast</h2>
+      <div class="forecast-rail">
+        <div class="weather-card">
+          <div class="card-top">4pm</div>
+          <div class="card-icon">⛅</div>
+          <div class="card-temp">27°C</div>
+          <div class="card-feels">Feels 30</div>
+          <div class="card-bottom"><span>🌧</span><span>20%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">5pm</div>
+          <div class="card-icon">🌤</div>
+          <div class="card-temp">26°C</div>
+          <div class="card-feels">Feels 26</div>
+          <div class="card-bottom"><span>🌧</span><span>20%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">6pm</div>
+          <div class="card-icon">☁</div>
+          <div class="card-temp">25°C</div>
+          <div class="card-feels">Feels 26</div>
+          <div class="card-bottom"><span>🌧</span><span>30%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">7pm</div>
+          <div class="card-icon">☁</div>
+          <div class="card-temp">25°C</div>
+          <div class="card-feels">Feels 25</div>
+          <div class="card-bottom"><span>🌧</span><span>30%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">8pm</div>
+          <div class="card-icon">🌙</div>
+          <div class="card-temp">25°C</div>
+          <div class="card-feels">Feels 25</div>
+          <div class="card-bottom"><span>🌧</span><span>20%</span></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Precipitation chart placeholder -->
-    <div class="chart">
-      <div class="chart-grid">
-        <div class="bar" style="height:0%">0</div>
-        <div class="bar" style="height:0%">0</div>
-        <div class="bar" style="height:0%">0</div>
-        <div class="bar" style="height:30%">0.51</div>
-        <div class="bar" style="height:70%">1.32</div>
-        <div class="bar" style="height:100%">1.86</div>
-      </div>
-      <div class="time-labels">
-        <span>20:30</span>
-        <span>21:30</span>
-        <span>22:30</span>
-        <span>23:30</span>
-        <span>00:30</span>
-        <span>01:30</span>
-      </div>
-    </div>
-  </div>
-
-    <!-- Weekly forecast -->
-    <section class="weekly">
-      <h2>This Week</h2>
-      <div class="weekly-row">
-        <span>Mon</span><span>☀️</span><span>10%</span><span>29° / 23°</span>
-      </div>
-      <div class="weekly-row">
-        <span>Tue</span><span>🌧️</span><span>60%</span><span>27° / 22°</span>
-      </div>
-      <div class="weekly-row">
-        <span>Wed</span><span>⛅</span><span>20%</span><span>28° / 21°</span>
+    <!-- 5 Day Forecast -->
+    <section class="panel">
+      <h2>5 Day Forecast</h2>
+      <div class="forecast-rail">
+        <div class="weather-card">
+          <div class="card-top">Mon</div>
+          <div class="card-icon">☀️</div>
+          <div class="card-temp">30°C</div>
+          <div class="card-hi-lo"><span>H 30°C</span><span>L 20°</span></div>
+          <div class="card-bottom"><span>🌧</span><span>10%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Tue</div>
+          <div class="card-icon">☁️</div>
+          <div class="card-temp">28°C</div>
+          <div class="card-hi-lo"><span>H 28°C</span><span>L 19°</span></div>
+          <div class="card-bottom"><span>🌧</span><span>20%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Wed</div>
+          <div class="card-icon">🌧</div>
+          <div class="card-temp">26°C</div>
+          <div class="card-hi-lo"><span>H 26°C</span><span>L 18°</span></div>
+          <div class="card-bottom"><span>🌧</span><span>60%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Thu</div>
+          <div class="card-icon">☀️</div>
+          <div class="card-temp">29C°</div>
+          <div class="card-hi-lo"><span>H 29°C</span><span>L 21°</span></div>
+          <div class="card-bottom"><span>🌧</span><span>10%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Fri</div>
+          <div class="card-icon">☁️</div>
+          <div class="card-temp">27°C</div>
+          <div class="card-hi-lo"><span>H 27°</span><span>L 20°</span></div>
+          <div class="card-bottom"><span>🌧</span><span>25%</span></div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Bottom nav -->
-  <nav class="bottom-nav">
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <button class="search-btn">🔍</button>
-  </nav>
-
-  <script>
-    const largeHeader = document.querySelector('.header-large');
-const smallHeader = document.querySelector('.header-small');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 120) {
-    largeHeader.classList.add('hidden');
-    smallHeader.classList.add('active');
-  } else {
-    largeHeader.classList.remove('hidden');
-    smallHeader.classList.remove('active');
-  }
-});
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
