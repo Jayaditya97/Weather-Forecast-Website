@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Favorite Cities (Dark)</title>
+  <title>Favorite Cities (Dark Mode)</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <style>
     body {
       background: #1a1a1a;
@@ -83,6 +84,11 @@
   text-align: center;
   width: fit-content;
 }
+  .weather-icon {
+  width: 32px;   /* adjust to taste */
+  height: 32px;  /* keep square */
+  object-fit: contain; /* prevents stretching */
+}
 
 
   </style>
@@ -94,30 +100,35 @@
     <div class="favorites-container">
       <a class="city-card" href="city1.html">
         <div class="city-title">Delhi</div>
+        <div class="card-icon"><img src="images/sun.png" alt="Cloudy" class="weather-icon"></div>
         <div class="city-temp">32°C</div>
         <div class="city-feels">Feels like 34°C</div>
         <div class="city-forecast">Sunny, H: 35°C L: 28°C</div>
       </a>
       <a class="city-card" href="city2.html">
         <div class="city-title">Mumbai</div>
+        <div class="card-icon"><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></div>
         <div class="city-temp">29°C</div>
         <div class="city-feels">Feels like 31°C</div>
         <div class="city-forecast">Rainy, H: 30°C L: 26°C</div>
       </a>
       <a class="city-card" href="city3.html">
         <div class="city-title">Chennai</div>
+        <div class="card-icon"><img src="images/sun.png" alt="Cloudy" class="weather-icon"></div>
         <div class="city-temp">34°C</div>
         <div class="city-feels">Feels like 36°C</div>
         <div class="city-forecast">Hot, H: 37°C L: 30°C</div>
       </a>
       <a class="city-card" href="city4.html">
         <div class="city-title">Kolkata</div>
+        <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
         <div class="city-temp">28°C</div>
         <div class="city-feels">Feels like 29°C</div>
         <div class="city-forecast">Cloudy, H: 30°C L: 25°C</div>
       </a>
       <a class="city-card" href="city5.html">
         <div class="city-title">Bangalore</div>
+        <div class="card-icon"><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></div>
         <div class="city-temp">26°C</div>
         <div class="city-feels">Feels like 27°C</div>
         <div class="city-forecast">Thunderstorm, H: 28°C L: 22°C</div>

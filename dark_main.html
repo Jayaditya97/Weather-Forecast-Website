@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App - Dark Mode</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="dark_main.css">
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="images/cloudy.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Header -->
+  <header class="top-bar">
+    <h1>Weather Forecasting Website</h1>
+    <nav>
+      <a href="dark_favorites.html">⭐ Favorites</a>
+      <a href="light_main.html" class="mode-toggle">☀️ Light Mode</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Current Weather -->
+    <section class="panel current-weather">
+      <h2>Current Weather - Chandigarh</h2>
+      <div class="weather-main">
+        <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+        <span class="temp">28°C</span>
+        <span class="condition">Cloudy</span>
+      </div>
+      <p class="details">Feels like 30°C | Humidity 60% | Wind 12 km/h</p>
+    </section>
+
+    <!-- Hourly Forecast -->
+    <section class="panel">
+      <h2>Hourly Forecast</h2>
+      <div class="forecast-rail">
+        <div class="weather-card">
+          <div class="card-top">4pm</div>
+          <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 27°C</div>
+          <div class="card-feels">Feels 30</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>20%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">5pm</div>
+          <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 26°C</div>
+          <div class="card-feels">Feels 26</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>20%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">6pm</div>
+          <div class="card-icon"><img src="images/cloud.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 25°C</div>
+          <div class="card-feels">Feels 26</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>30%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">7pm</div>
+          <div class="card-icon"><img src="images/cloud.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 25°C</div>
+          <div class="card-feels">Feels 25</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>30%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">8pm</div>
+          <div class="card-icon"><img src="images/moon.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 25°C</div>
+          <div class="card-feels">Feels 25</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>20%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Day Forecast -->
+    <section class="panel">
+      <h2>5 Day Forecast</h2>
+      <div class="forecast-rail">
+        <div class="weather-card">
+          <div class="card-top">Mon</div>
+          <div class="card-icon"><img src="images/sun.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 30°C</div>
+          <div class="card-hi-lo"><span>H 30°C</span><span>L 20°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>10%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Tue</div>
+          <div class="card-icon"><img src="images/cloud.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 28°C</div>
+          <div class="card-hi-lo"><span>H 28°C</span><span>L 19°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>20%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Wed</div>
+          <div class="card-icon"><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 26°C</div>
+          <div class="card-hi-lo"><span>H 26°C</span><span>L 18°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>60%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Thu</div>
+          <div class="card-icon"><img src="images/sun.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp"> 29°C</div>
+          <div class="card-hi-lo"><span>H 29°C</span><span>L 21°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Cloudy" class="weather-icon"></span><span>10%</span></div>
+        </div>
+        <div class="weather-card">
+        <div class="card-top">Fri</div>
+        <div class="card-icon">
+          <img src="images/cloudy.png" alt="Cloudy" class="weather-icon">
+        </div>
+        <div class="card-temp">27°C</div>
+        <div class="card-hi-lo"><span>H 27°</span><span>L 20°</span></div>
+        <div class="card-bottom">
+          <span><img src="images/rainy.png" alt="Rain" class="weather-icon small"></span>
+          <span>25%</span>
+        </div>
+      </div>
+
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .dark-text, .dark-text * {
+      color: rgb(0, 0, 0) !important;
+    }
+  </style>
+   <script>
+  const weatherCondition = "rainy"; // hardcoded for now
+  const video = document.getElementById("bg-video");
+
+  if (weatherCondition === "sunny") {
+    video.src = "images/sunny.mp4";
+  } else if (weatherCondition === "cloudy") {
+    video.src = "images/cloudy.mp4";
+  } else if (weatherCondition === "rainy") {
+    video.src = "images/rainy.mp4";
+  }
+</script>
+</body>
+</html>
+
