@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorite Cities (Dark)</title>
+  <style>
+    body {
+      background: #1a1a1a;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+    .favorites-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      padding: 40px 10px;
+    }
+    .city-card {
+      background: #2a2a2a;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      padding: 24px 18px;
+      min-width: 220px;
+      max-width: 260px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: #fff;
+    }
+    .city-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+      transform: translateY(-4px) scale(1.03);
+    }
+    .city-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .city-temp {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .city-feels {
+      font-size: 1rem;
+      color: #bbb;
+      margin-bottom: 8px;
+    }
+    .city-forecast {
+      font-size: 0.95rem;
+      color: #ffcc00;
+      margin-bottom: 4px;
+    }
+    @media (max-width: 700px) {
+      .favorites-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .city-card {
+        max-width: 95vw;
+      }
+    }
+ .mode-toggle {
+  margin: 20px auto 10px auto;
+  display: block;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #444444;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+}
+
+
+  </style>
+</head>
+<body>
+  <a href="light_favorites.html" class="mode-toggle">☀️ Light Mode</a>
+  <main>
+    <h1 style="text-align:center; margin-top:30px; margin-bottom:10px;">Favorite Cities</h1>
+    <div class="favorites-container">
+      <a class="city-card" href="city1.html">
+        <div class="city-title">Delhi</div>
+        <div class="city-temp">32°C</div>
+        <div class="city-feels">Feels like 34°C</div>
+        <div class="city-forecast">Sunny, H: 35°C L: 28°C</div>
+      </a>
+      <a class="city-card" href="city2.html">
+        <div class="city-title">Mumbai</div>
+        <div class="city-temp">29°C</div>
+        <div class="city-feels">Feels like 31°C</div>
+        <div class="city-forecast">Rainy, H: 30°C L: 26°C</div>
+      </a>
+      <a class="city-card" href="city3.html">
+        <div class="city-title">Chennai</div>
+        <div class="city-temp">34°C</div>
+        <div class="city-feels">Feels like 36°C</div>
+        <div class="city-forecast">Hot, H: 37°C L: 30°C</div>
+      </a>
+      <a class="city-card" href="city4.html">
+        <div class="city-title">Kolkata</div>
+        <div class="city-temp">28°C</div>
+        <div class="city-feels">Feels like 29°C</div>
+        <div class="city-forecast">Cloudy, H: 30°C L: 25°C</div>
+      </a>
+      <a class="city-card" href="city5.html">
+        <div class="city-title">Bangalore</div>
+        <div class="city-temp">26°C</div>
+        <div class="city-feels">Feels like 27°C</div>
+        <div class="city-forecast">Thunderstorm, H: 28°C L: 22°C</div>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
