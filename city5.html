@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bangalore Weather</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="images/rainy.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Header -->
+  <header class="top-bar">
+    <h1>Bangalore Weather</h1>
+    <nav>
+      <a href="favorites.html">⭐ Favorites</a>
+      <button id="dark-mode-toggle" style="margin-left:10px; padding:6px 12px; border-radius:8px; border:none; background:#333; color:#fff; cursor:pointer;">🌙 Dark Mode</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Current Weather -->
+    <section class="panel current-weather">
+      <h2>Current Weather - Bangalore</h2>
+      <div class="weather-main">
+        <div class="card-icon"><img src="images/rainy.png" alt="Thunderstorm" class="weather-icon"></div>
+        <span class="temp">26°C</span>
+        <span class="condition">Thunderstorm</span>
+      </div>
+      <p class="details">Feels like 27°C | Humidity 80% | Wind 18 km/h</p>
+    </section>
+
+    <!-- Hourly Forecast -->
+    <section class="panel">
+      <h2>Hourly Forecast</h2>
+      <div class="forecast-rail">
+        <div class="weather-card">
+          <div class="card-top">2pm</div>
+          <div class="card-icon"><img src="images/rainy.png" alt="Thunderstorm" class="weather-icon"></div>
+          <div class="card-temp">26°C</div>
+          <div class="card-feels">Feels 27</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>90%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">3pm</div>
+          <div class="card-icon"><img src="images/rainy.png" alt="Thunderstorm" class="weather-icon"></div>
+          <div class="card-temp">25°C</div>
+          <div class="card-feels">Feels 26</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>95%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">4pm</div>
+          <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp">24°C</div>
+          <div class="card-feels">Feels 25</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>60%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">5pm</div>
+          <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp">23°C</div>
+          <div class="card-feels">Feels 24</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>50%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">6pm</div>
+          <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp">22°C</div>
+          <div class="card-feels">Feels 23</div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>40%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Day Forecast -->
+    <section class="panel">
+      <h2>5 Day Forecast</h2>
+      <div class="forecast-rail">
+        <div class="weather-card">
+          <div class="card-top">Mon</div>
+          <div class="card-icon"><img src="images/rainy.png" alt="Thunderstorm" class="weather-icon"></div>
+          <div class="card-temp">26°C</div>
+          <div class="card-hi-lo"><span>H 28°C</span><span>L 22°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>80%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Tue</div>
+          <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp">25°C</div>
+          <div class="card-hi-lo"><span>H 27°C</span><span>L 21°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>50%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Wed</div>
+          <div class="card-icon"><img src="images/sun.png" alt="Sunny" class="weather-icon"></div>
+          <div class="card-temp">27°C</div>
+          <div class="card-hi-lo"><span>H 29°C</span><span>L 23°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>20%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Thu</div>
+          <div class="card-icon"><img src="images/cloudy.png" alt="Cloudy" class="weather-icon"></div>
+          <div class="card-temp">26°C</div>
+          <div class="card-hi-lo"><span>H 28°C</span><span>L 22°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>40%</span></div>
+        </div>
+        <div class="weather-card">
+          <div class="card-top">Fri</div>
+          <div class="card-icon"><img src="images/rainy.png" alt="Thunderstorm" class="weather-icon"></div>
+          <div class="card-temp">24°C</div>
+          <div class="card-hi-lo"><span>H 26°C</span><span>L 20°</span></div>
+          <div class="card-bottom"><span><img src="images/rainy.png" alt="Rain" class="weather-icon"></span><span>70%</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .dark-text, .dark-text * {
+      color: black !important;
+    }
+  </style>
+  <script>
+    const darkBtn = document.getElementById('dark-mode-toggle');
+    darkBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark-text');
+      if(document.body.classList.contains('dark-text')) {
+        darkBtn.textContent = '☀️ Light Mode';
+      } else {
+        darkBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
