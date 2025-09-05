@@ -4,7 +4,30 @@
   <meta charset="UTF-8">
   <title>Chennai Weather</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="light_main.css">
+  <style>
+    /* Dark mode overrides */
+    body.dark-text {
+      background-color: #001a2c;
+    }
+    
+    .dark-text .panel {
+      background: rgba(0, 20, 40, 0.7);
+    }
+    
+    .dark-text .weather-card {
+      background: rgba(0, 30, 60, 0.8);
+    }
+    
+    .dark-text .top-bar {
+      background: rgba(0, 20, 40, 0.8);
+    }
+    
+    /* Ensure all transitions are smooth */
+    body, .panel, .weather-card, .top-bar {
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
 <body>
   <!-- Background Video -->
@@ -17,7 +40,7 @@
   <header class="top-bar">
     <h1>Chennai Weather</h1>
     <nav>
-      <a href="favorites.html">⭐ Favorites</a>
+      <a href="dark_favorites.html">⭐ Favorites</a>
       <button id="dark-mode-toggle" style="margin-left:10px; padding:6px 12px; border-radius:8px; border:none; background:#333; color:#fff; cursor:pointer;">🌙 Dark Mode</button>
     </nav>
   </header>
